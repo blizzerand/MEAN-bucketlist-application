@@ -1,0 +1,29 @@
+<div class="container">
+  
+    <form (ngSubmit)="onSubmit()">
+      <div  class="form-group col-md-4">
+        <label for="title"><h4>Title</h4></label>
+        <input type="text" class="form-control" [(ngModel)]="newList.title" name="title" required>
+      </div>
+ 
+      <div class="form-group col-md-2">
+        <label for="category"><h4>Category</h4></label>
+        <select class="form-control" name="cat" [(ngModel)]="newList.category" >
+        	
+  			<option value="High">High Priority</option>
+  			<option value="Medium">Medium Priority</option>
+  			<option value="Low">Low Prioirty</option>
+  		
+		</select>
+      </div>
+
+      <div class="form-group col-md-5">
+        <label for="description"><h4>Description</h4></label>
+        <input type="text" class="form-control" [(ngModel)]="newList.description" name="description" required>
+      </div>
+ 
+ 	
+      <button type="submit" class="push-button-down btn btn-success">Submit</button>
+ 	
+    </form>
+</div>

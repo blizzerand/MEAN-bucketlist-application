@@ -1,0 +1,27 @@
+{
+  "name": "awesome-bucketlist",
+  "version": "1.0.0",
+  "description": "A simple bucketlist app using MEAN stack",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "cors": "*",
+    "body-parser": "*"
+  },
+
+    "keywords": [
+    "MEAN",
+    "stack",
+    "Express.js",
+    "MongoDB",
+    "Angular",
+    "MEAN"
+  ],
+    
+  "author": "Manjunath",
+  "license": "ISC"
+}
