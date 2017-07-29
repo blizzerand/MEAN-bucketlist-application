@@ -9,7 +9,7 @@ import { ListService } from '../services/list.service';
 })
 export class AddListComponent implements OnInit {
   private newList :List;
-  @Output() notifyView: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() addList: EventEmitter<List> = new EventEmitter<List>();
   constructor(private listServ: ListService) { }
  
   ngOnInit() {
@@ -28,7 +28,7 @@ export class AddListComponent implements OnInit {
   		response=> {
   			
   			if(response.success== true)
-  				this.notifyView.emit(true);
+  				this.addList.emit(this.newList);
   		},
 	);
 

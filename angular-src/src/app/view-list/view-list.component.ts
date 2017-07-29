@@ -10,7 +10,7 @@ import { List } from '../models/List'
 export class ViewListComponent implements OnInit {
   
   //lists propoerty which is an array of List type
-  private lists: List[];
+  private lists: List[] = [];
 
   constructor(private listServ: ListService) { }
 
@@ -28,17 +28,16 @@ export class ViewListComponent implements OnInit {
 		
   }
 
-  //deleteList
+  //The deleted list is being filtered out using the .filter method
   public deleteList(list: List) {
     this.listServ.deleteList(list._id).subscribe(
-		response=> this.loadLists(),)
+	  response =>	this.lists = this.lists.filter(lists => lists !== list),)
 		
-
 	}
 
-  public onNotify(event: string) {
-	 	
- 	this.loadLists();
-	 }
+  //onAddList will be invoked when the child component emits an event
+  public onAddList(newList) {
+    this.lists = this.lists.concat(newList);
+  }
 }
 	

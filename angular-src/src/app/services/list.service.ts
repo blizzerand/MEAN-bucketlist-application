@@ -15,7 +15,7 @@ export class ListService {
     
     public getAllLists():Observable<List[]> {
         
-        let headers = new Headers;
+      
       let URI = `${this.serverApi}/bucketlist/`;
         return this.http.get(URI)
             .map(res => res.json())
@@ -26,7 +26,7 @@ export class ListService {
       let URI = `${this.serverApi}/bucketlist/${listId}`;
         let headers = new Headers;
         headers.append('Content-Type', 'application/json');
-        return this.http.delete(URI, {headers})
+        return this.http.delete(URI, {headers: headers})
         .map(res => res.json());
     }
 
@@ -35,7 +35,7 @@ export class ListService {
   		let headers = new Headers;
   		 let body = JSON.stringify({title: list.title, description: list.description, category: list.category});
   		headers.append('Content-Type', 'application/json');
-  		return this.http.post(URI, body ,{headers})
+  		return this.http.post(URI, body ,{headers: headers})
   		.map(res => res.json());
   	}
 }
