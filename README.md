@@ -10,7 +10,9 @@ npm install
 
 The angular front-end code is located inside the `angular-src`. 
 
-Then doing a 
+Do a `npm install` inside the `angular-src` directory so that npm can install all the angular dependencies
+
+Angular-CLI's
 
 ```
 ng build
